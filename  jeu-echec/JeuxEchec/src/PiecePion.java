@@ -1,16 +1,24 @@
+import java.util.List;
 
-public class PiecePion extends Piece implements Pion {
 
-	
+public class PiecePion extends Piece {
 
-	public PiecePion(String nom, String couleur, String position) {
-		super(nom, couleur, position);
+
+	public PiecePion(String couleur, Position position, boolean isCapturable) {
+		super(couleur, position, isCapturable);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public boolean deplacementValide() {
-	
-		return false;
+	public List<Position> typeDeplacement(Case c) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void capturable() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

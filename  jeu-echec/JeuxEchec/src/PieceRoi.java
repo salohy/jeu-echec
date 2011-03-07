@@ -1,9 +1,24 @@
+import java.util.List;
 
-public class PieceRoi extends Pion {
 
-	public PieceRoi(String couleur, String type) {
-		super(couleur, type);
+public class PieceRoi extends Piece {
+
+	public PieceRoi(String couleur, Position position, boolean isCapturable) {
+		super(couleur, position, isCapturable);
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public List<Position> typeDeplacement(Case c) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void capturable() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

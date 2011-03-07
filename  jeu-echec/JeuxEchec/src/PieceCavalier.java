@@ -1,3 +1,5 @@
+import java.util.List;
+
 
 public class PieceCavalier extends Piece{
 
@@ -6,15 +8,15 @@ public class PieceCavalier extends Piece{
 	}
 
 	@Override
-	public void typeDeplacement() {
+	public void capturable() {
 		
 		
 	}
 
 	@Override
-	public void capturable() {
-		
-		
+	public List<Position> typeDeplacement(Case c) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
