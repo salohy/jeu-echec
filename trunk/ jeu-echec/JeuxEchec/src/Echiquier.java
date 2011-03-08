@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -27,29 +28,33 @@ public class Echiquier {
 	 * @return 
 	 */
 	public List<Position> positionJouable(Joueur joueur, Piece piece){
-		Case casePiece;
 		List<Position> listPositionsJouables;
 		//case sur laquelle est la piece à jouer
-		casePiece = this.casePiece(piece);
+		Case casePiece = piece.getCasePiece();
 		//liste des positions possibles pour cette pièce
 		listPositionsJouables = piece.typeDeplacement(casePiece);
 		//TODO: affiner la liste en fonction des cases occupées
 		
+		listPositionsJouables=isDeplacementPossible(listPositionsJouables);
+		
 		return listPositionsJouables; //TODO vérifier ds le main que le joueur a choisie une position incluse ds la liste
 	}
 	
+
+
+
 	/**
 	 * methode qui retourne la case sur laquelle se trouve la piece en parametre
 	 * @param piece
 	 * @return
 	 */
-	public Case casePiece(Piece piece){
+	/*public Case casePiece(Piece piece){
 		Case casePiece;
 		Position positionPiece = piece.getPosition();
 		casePiece = this.cases.getCase(positionPiece);
 				
 		return casePiece;
-	}
+	}*/
 
 	/**
 	 * methode qui deplace la piece du joueur à la position en paramètre
@@ -62,7 +67,7 @@ public class Echiquier {
 		Case caseChoisie=Cases.getCase(positionChoisie);
 		
 		if(caseChoisie.isPrise()){
-			//TODO
+			//vérif
 		}
 		
 		

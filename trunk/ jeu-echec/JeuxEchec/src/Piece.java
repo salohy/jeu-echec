@@ -4,15 +4,15 @@ import java.util.List;
 public abstract class Piece {
 	
 	private Couleur couleur;
-	private Position position;
+	private Case casePiece;
 	private boolean isCapturable;
 	
 	
-	public Piece(Couleur couleur, Position position,
+	public Piece(Couleur couleur, Case casePiece,
 			boolean isCapturable) {
 		super();
 		this.couleur = couleur;
-		this.position = position;
+		this.casePiece = casePiece;
 		this.isCapturable = isCapturable;
 	}
 	
@@ -36,13 +36,15 @@ public abstract class Piece {
 	
 	public abstract void capturable();
 
-	public Position getPosition() {
-		return position;
+	public Case getCasePiece() {
+		return casePiece;
 	}
 
-	public void setPosition(Position position) {
-		this.position = position;
+	public void setCasePiece(Case casePiece) {
+		this.casePiece = casePiece;
 	}
+
+	
 	
 	
 }

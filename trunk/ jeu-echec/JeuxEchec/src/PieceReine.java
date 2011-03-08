@@ -4,8 +4,9 @@ import java.util.List;
 public class PieceReine extends Piece {
 
 	
-	public PieceReine(Couleur couleur, Position position, boolean isCapturable) {
-		super(couleur, position, isCapturable);
+
+	public PieceReine(Couleur couleur, Case casePiece, boolean isCapturable) {
+		super(couleur, casePiece, isCapturable);
 		// TODO Auto-generated constructor stub
 	}
 
