@@ -32,7 +32,7 @@ public abstract class Piece {
 		this.isCapturable = isCapturable;
 	}
 
-	public abstract List<Position> typeDeplacement(Case c);
+	public abstract List<Position> typeDeplacement(/*Case c*/);
 	
 	public abstract void capturable();
 
