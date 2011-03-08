@@ -4,8 +4,8 @@ import java.util.List;
 public class PiecePion extends Piece {
 
 
-	public PiecePion(Couleur couleur, Position position, boolean isCapturable) {
-		super(couleur, position, isCapturable);
+	public PiecePion(Couleur couleur, Case casePiece, boolean isCapturable) {
+		super(couleur, casePiece, isCapturable);
 		// TODO Auto-generated constructor stub
 	}
 

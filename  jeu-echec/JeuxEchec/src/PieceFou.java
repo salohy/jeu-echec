@@ -3,9 +3,9 @@ import java.util.List;
 
 public class PieceFou extends Piece {
 
-	
-	public PieceFou(Couleur couleur, Position position, boolean isCapturable) {
-		super(couleur, position, isCapturable);
+
+	public PieceFou(Couleur couleur, Case casePiece, boolean isCapturable) {
+		super(couleur, casePiece, isCapturable);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -18,7 +18,7 @@ public class PieceFou extends Piece {
 	@Override
 	public void capturable() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 
