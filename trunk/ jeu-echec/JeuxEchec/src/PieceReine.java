@@ -3,7 +3,8 @@ import java.util.List;
 
 public class PieceReine extends Piece {
 
-	public PieceReine(String couleur, Position position, boolean isCapturable) {
+	
+	public PieceReine(Couleur couleur, Position position, boolean isCapturable) {
 		super(couleur, position, isCapturable);
 		// TODO Auto-generated constructor stub
 	}

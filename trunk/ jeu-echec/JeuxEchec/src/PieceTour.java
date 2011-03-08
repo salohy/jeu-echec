@@ -4,7 +4,7 @@ import java.util.List;
 
 public class PieceTour extends Piece {
 
-	public PieceTour(String couleur, Position position, boolean isCapturable) {
+	public PieceTour(Couleur couleur, Position position, boolean isCapturable) {
 		super(couleur, position, isCapturable);
 	}
 

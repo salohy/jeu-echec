@@ -3,21 +3,27 @@ import java.util.List;
 
 public abstract class Piece {
 	
-	//private String nom;
-	private String couleur;
+	private Couleur couleur;
 	private Position position;
 	private boolean isCapturable;
 	
 	
-	public Piece(/*String nom, */String couleur, Position position,
+	public Piece(Couleur couleur, Position position,
 			boolean isCapturable) {
 		super();
-		//this.nom = nom;
 		this.couleur = couleur;
 		this.position = position;
 		this.isCapturable = isCapturable;
 	}
 	
+	public Couleur getCouleur() {
+		return couleur;
+	}
+
+	public void setCouleur(Couleur couleur) {
+		this.couleur = couleur;
+	}
+
 	public boolean isCapturable() {
 		return isCapturable;
 	}
