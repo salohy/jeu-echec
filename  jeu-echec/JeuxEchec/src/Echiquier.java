@@ -21,7 +21,7 @@ public class Echiquier {
 	}
 	
 	/**
-	 * deplacement de la piece du joueur sur l'echiquier
+	 * liste des positions jouables sur l'echiquier pour le joueur 
 	 * @param joueur
 	 * @param piece
 	 * @return 
@@ -35,7 +35,7 @@ public class Echiquier {
 		listPositionsJouables = piece.typeDeplacement(casePiece);
 		//TODO: affiner la liste en fonction des cases occupées
 		
-		return listPositionsJouables;
+		return listPositionsJouables; //TODO vérifier ds le main que le joueur a choisie une position incluse ds la liste
 	}
 	
 	/**
@@ -58,7 +58,14 @@ public class Echiquier {
 	 * @param position
 	 */
 	public void deplacementPiece(Joueur joueur, Piece piece, Position positionChoisie){
-		//TODO: vérifier si la position est correcte
+		
+		Case caseChoisie=Cases.getCase(positionChoisie);
+		
+		if(caseChoisie.isPrise()){
+			//TODO
+		}
+		
+		
 	}
 
 }

@@ -1,7 +1,7 @@
 
 public class Cases {
 
-	private Case[][] tabCase;
+	private static Case[][] tabCase;
 	
 	public void addCases() {
 		Couleur color = Couleur.NOIR;
@@ -28,7 +28,7 @@ public class Cases {
 	 * @param positionPiece
 	 * @return Case
 	 */
-	public Case getCase(Position positionPiece) {
+	public static Case getCase(Position positionPiece) {
 		
 		int xPositionPiece = positionPiece.getX();
 		int yPositionPiece = positionPiece.getY();
