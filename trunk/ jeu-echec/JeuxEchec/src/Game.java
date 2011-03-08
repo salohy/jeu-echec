@@ -60,26 +60,15 @@ public class Game {
 
 
 	
-	
-/*	public void bouffePiece(Case caseChoisie){
+	/**
+	 * @param pieceABouffe
+	 * methode pour la prise de piece
+	 */
+	public static void bouffePiece(Piece pieceABouffe){
 		
-		
-		//2 Verifi si la case courante contient une piece du joueur, si ce n'est pas le cas c'est une piece du joueur adverse
-		if(caseCourante != caseDeLaPiece && caseDeLaPiece.isPrise()){
-
-			//remove la piece du joueur adverse
-			for(Iterator listeJoueur = joueurs.iterator();listeJoueur.hasNext();){
-				
-				Joueur j=(Joueur)listeJoueur.next();
-				
-				if(j!=joueur){
-					j.removePiece(pieceCourante);
-				}
-				
-			}
-			
-		}
-	}*/
+		Joueur j= pieceABouffe.getProprietaire();
+		j.removePiece(pieceABouffe);
+	}
 	
 	
 	

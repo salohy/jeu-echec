@@ -2,20 +2,20 @@ import java.util.List;
 
 
 public abstract class Piece {
-	
+
 	private Couleur couleur;
-	private Case casePiece;
+	//private Case casePiece;
 	private boolean isCapturable;
-	
-	
-	public Piece(Couleur couleur, Case casePiece,
-			boolean isCapturable) {
+	private Joueur proprietaire;
+
+
+	public Piece(Couleur couleur, boolean isCapturable, Joueur proprietaire) {
 		super();
 		this.couleur = couleur;
-		this.casePiece = casePiece;
 		this.isCapturable = isCapturable;
+		this.proprietaire = proprietaire;
 	}
-	
+
 	public Couleur getCouleur() {
 		return couleur;
 	}
@@ -32,19 +32,26 @@ public abstract class Piece {
 		this.isCapturable = isCapturable;
 	}
 
-	public abstract List<Position> typeDeplacement(/*Case c*/);
-	
+
+	public Joueur getProprietaire() {
+		return proprietaire;
+	}
+
+	public void setProprietaire(Joueur proprietaire) {
+		this.proprietaire = proprietaire;
+	}
+
+	public abstract List<Case> typeDeplacement(Case casePieceADeplacer);
+
 	public abstract void capturable();
 
-	public Case getCasePiece() {
-		return casePiece;
+
+
+	public String toString(){
+
+
+		return  " ma couleur "+couleur+" propriétaire: "+this.getProprietaire();
 	}
 
-	public void setCasePiece(Case casePiece) {
-		this.casePiece = casePiece;
-	}
 
-	
-	
-	
 }

@@ -5,13 +5,13 @@ public class PieceReine extends Piece {
 
 	
 
-	public PieceReine(Couleur couleur, Case casePiece, boolean isCapturable) {
-		super(couleur, casePiece, isCapturable);
+	public PieceReine(Couleur couleur, boolean isCapturable, Joueur proprietaire) {
+		super(couleur, isCapturable, proprietaire);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public List<Position> typeDeplacement(Case c) {
+	public List<Case> typeDeplacement(Case c) {
 		// TODO Auto-generated method stub
 		return null;
 	}
