@@ -3,8 +3,12 @@ import java.util.List;
 
 public class PieceCavalier extends Piece{
 
-	public PieceCavalier(String couleur, Position position, boolean isCapturable) {
+
+
+	public PieceCavalier(Couleur couleur, Position position,
+			boolean isCapturable) {
 		super(couleur, position, isCapturable);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override

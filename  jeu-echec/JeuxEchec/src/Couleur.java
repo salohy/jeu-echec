@@ -1,13 +1,13 @@
 
-public enum CouleurCase {
+public enum Couleur {
 	
-	CASE_BLANCHE, CASE_NOIR;
+	BLANC, NOIR;
 	
 	public String toString() {
 		switch (this) {
-		case CASE_BLANCHE:
+		case BLANC:
 			return "blanc";
-		case CASE_NOIR:
+		case NOIR:
 			return "noir";
 
 		default:

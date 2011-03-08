@@ -3,7 +3,7 @@ public class Case {
 
 	
 	private Position position;
-	private CouleurCase couleur;
+	private Couleur couleur;
 	private boolean isPrise;
 	
 	
@@ -15,12 +15,12 @@ public class Case {
 		this.position = p;
 	}
 
-	public void setCouleur(CouleurCase couleur) {
+	public void setCouleur(Couleur couleur) {
 		this.couleur = couleur;
 	}
 
 	
-	public CouleurCase getCouleur() {
+	public Couleur getCouleur() {
 		return couleur;
 	}
 
@@ -33,7 +33,7 @@ public class Case {
 	}
 
 	
-	public Case(Position p,  CouleurCase color, boolean isPrise) {
+	public Case(Position p,  Couleur color, boolean isPrise) {
 		super();
 		this.position = p;
 		this.couleur=color;

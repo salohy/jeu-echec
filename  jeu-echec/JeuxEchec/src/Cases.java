@@ -4,16 +4,16 @@ public class Cases {
 	private Case[][] tabCase;
 	
 	public void addCases() {
-		CouleurCase color = CouleurCase.CASE_NOIR;
+		Couleur color = Couleur.NOIR;
 		
 		for (int i=0;i<CONSTANTES.MAX_LIGNE;i++){
 			for (int j=0;j<CONSTANTES.MAX_COL;j++){
-				if (color == CouleurCase.CASE_NOIR){
+				if (color == Couleur.NOIR){
 					tabCase[i][j]=new Case(new Position(i, j), color, false);
-					color = CouleurCase.CASE_BLANCHE;
+					color = Couleur.BLANC;
 				}else{
 					tabCase[i][j]=new Case(new Position(i, j), color, false);
-					color = CouleurCase.CASE_NOIR;
+					color = Couleur.NOIR;
 				}
 				
 				

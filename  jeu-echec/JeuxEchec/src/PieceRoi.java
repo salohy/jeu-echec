@@ -3,9 +3,9 @@ import java.util.List;
 
 public class PieceRoi extends Piece {
 
-	public PieceRoi(String couleur, Position position, boolean isCapturable) {
+	
+	public PieceRoi(Couleur couleur, Position position, boolean isCapturable) {
 		super(couleur, position, isCapturable);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
