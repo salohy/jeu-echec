@@ -6,8 +6,8 @@ import java.util.List;
 public class PieceTour extends Piece {
 
 
-	public PieceTour(Couleur couleur, Case casePiece, boolean isCapturable) {
-		super(couleur, casePiece, isCapturable);
+	public PieceTour(Couleur couleur, boolean isCapturable, Joueur proprietaire) {
+		super(couleur, isCapturable, proprietaire);
 	}
 
 
@@ -45,84 +45,208 @@ public class PieceTour extends Piece {
 
 
 
+/*	@Override
+	public List<Position> typeDeplacement(Case casePieceADeplacer) {
 
-	public List<Position> typeDeplacement(Cases cases) {
-
-		//case de la piece que le joueur a choisi de déplacer
-		Case casePiece=this.getCasePiece();
-		int x=casePiece.getPosition().getX();
-		int y=casePiece.getPosition().getY();
+		int x=casePieceADeplacer.getPosition().getX();
+		int y=casePieceADeplacer.getPosition().getY();
 
 		List<Position> positionPossibles=new ArrayList<Position>();
 
 		for(int i=0; i<Cases.getTabCase().length;i++){
 
 
-			 
+			for (int coordX=x;coordX<CONSTANTES.MAX_LIGNE;coordX++){
+				if (coordX != x){
 
-			for (int coordY=0;coordY<CONSTANTES.MAX_COL;coordY++){
+					//on récupère la case avec les coordonnées recu
+					Case c=Cases.getCase(new Position(coordX,y));
+					if(!c.isPrise()){
+						positionPossibles.add (new Position(coordX,y));
+					}else{
+
+						//voir si la case prise est occupé par une piece de l'adversaire
+
+						if (c.getPiece().getProprietaire() != casePieceADeplacer.getPiece().getProprietaire()){
+							positionPossibles.add (new Position(coordX,y));
+						}
+
+						break;
+					}
+				}
+			}
+
+
+			for (int coordX=0;coordX<x;coordX++){
+				if (coordX != x){
+
+					//on récupère la case avec les coordonnées recu
+					Case c=Cases.getCase(new Position(coordX,y));
+					if(!c.isPrise()){
+						positionPossibles.add (new Position(coordX,y));
+					}else{
+
+						//voir si la case prise est occupé par une piece de l'adversaire
+
+						if (c.getPiece().getProprietaire() != casePieceADeplacer.getPiece().getProprietaire()){
+							positionPossibles.add (new Position(coordX,y));
+						}
+						break;
+					}
+				}
+			}
+
+
+			for (int coordY=y;coordY<CONSTANTES.MAX_COL;coordY++){
 				if (coordY != y){
 
 					//on récupère la case avec les coordonnées recu
 					Case c=Cases.getCase(new Position(x,coordY));
 					if(!c.isPrise()){
 						positionPossibles.add (new Position(x,coordY));
+					}else{
+
+						//voir si la case prise est occupé par une piece de l'adversaire
+
+						if (c.getPiece().getProprietaire() != casePieceADeplacer.getPiece().getProprietaire()){
+							positionPossibles.add (new Position(x,coordY));
+						}
+						break;
 					}
 				}
 			}
+
+
+			for (int coordY=0;coordY<y;coordY++){
+				if (coordY != y){
+
+					//on récupère la case avec les coordonnées recu
+					Case c=Cases.getCase(new Position(x,coordY));
+					if(!c.isPrise()){
+						positionPossibles.add (new Position(x,coordY));
+					}else{
+						//voir si la case prise est occupé par une piece de l'adversaire
+
+						if (c.getPiece().getProprietaire() != casePieceADeplacer.getPiece().getProprietaire()){
+							positionPossibles.add (new Position(x,coordY));
+						}
+						break;
+					}
+				}
+			}
+
 		}
 
 		System.out.println("-------Liste des positions possibles-------------"+positionPossibles);
 
 		return positionPossibles;
 	}
+	*/
+	
+	
+	
+	@Override
+	public List<Case> typeDeplacement(Case casePieceADeplacer) {
+
+		int x=casePieceADeplacer.getPosition().getX();
+		int y=casePieceADeplacer.getPosition().getY();
+
+		List<Case> positionPossibles=new ArrayList<Case>();
+
+		for(int i=0; i<Cases.getTabCase().length;i++){
 
 
+			for (int coordX=x;coordX<CONSTANTES.MAX_LIGNE;coordX++){
+				if (coordX != x){
 
+					//on récupère la case avec les coordonnées recu
+					Case c=Cases.getCase(new Position(coordX,y));
+					if(!c.isPrise()){
+						positionPossibles.add (c);
+					}else{
 
+						//voir si la case prise est occupé par une piece de l'adversaire
 
-	public List<Position> isDeplacementPossible(Joueur joueur,List<Position> listPositionsJouables) {
+						if (c.getPiece().getProprietaire() != casePieceADeplacer.getPiece().getProprietaire()){
+							positionPossibles.add (c);
+							c.getPiece().setCapturable(true);
+						}
 
-		List<Position> positionPossible;
-		List <Piece> piecesDuJoueur=joueur.getPieces();
-
-		for(Iterator i = listPositionsJouables.iterator();i.hasNext();){
-
-			Position posCourante= (Position) i.next();
-
-			//récupération de la case grace a la position
-			Case caseCourante=Cases.getCase(posCourante);
-
-			//1 voir si la case courante est prise 
-			if(caseCourante.isPrise()){
-
-				//voir si la case prise contient une piece du joueur
-				for(Iterator piece = piecesDuJoueur.iterator();piece.hasNext();){
-
-					Piece pieceCourante= (Piece) piece.next();
-
-					//on récupère la case sur laquelle est la piece courante
-					Case caseDeLaPiece=pieceCourante.getCasePiece();
-
-					/*vérif si la case de la piece est dans la liste des positions possibles, 
-					si oui il ya une piece du joueur a cette pos*/
-					if(caseCourante == caseDeLaPiece){
-						listPositionsJouables.remove(caseCourante);
+						break;
 					}
 				}
+			}
 
+
+			for (int coordX=0;coordX<x;coordX++){
+				if (coordX != x){
+
+					//on récupère la case avec les coordonnées recu
+					Case c=Cases.getCase(new Position(coordX,y));
+					if(!c.isPrise()){
+						positionPossibles.add (c);
+					}else{
+
+						//voir si la case prise est occupé par une piece de l'adversaire
+
+						if (c.getPiece().getProprietaire() != casePieceADeplacer.getPiece().getProprietaire()){
+							positionPossibles.add (c);
+						}
+						break;
+					}
+				}
+			}
+
+
+			for (int coordY=y;coordY<CONSTANTES.MAX_COL;coordY++){
+				if (coordY != y){
+
+					//on récupère la case avec les coordonnées recu
+					Case c=Cases.getCase(new Position(x,coordY));
+					if(!c.isPrise()){
+						positionPossibles.add (c);
+					}else{
+
+						//voir si la case prise est occupé par une piece de l'adversaire
+
+						if (c.getPiece().getProprietaire() != casePieceADeplacer.getPiece().getProprietaire()){
+							positionPossibles.add (c);
+						}
+						break;
+					}
+				}
+			}
+
+
+			for (int coordY=0;coordY<y;coordY++){
+				if (coordY != y){
+
+					//on récupère la case avec les coordonnées recu
+					Case c=Cases.getCase(new Position(x,coordY));
+					if(!c.isPrise()){
+						positionPossibles.add (c);
+					}else{
+						//voir si la case prise est occupé par une piece de l'adversaire
+
+						if (c.getPiece().getProprietaire() != casePieceADeplacer.getPiece().getProprietaire()){
+							positionPossibles.add (c);
+						}
+						break;
+					}
+				}
 			}
 
 		}
 
-		positionPossible=listPositionsJouables;
+		System.out.println("-------Liste des cases possibles-------------"+positionPossibles);
 
-		return positionPossible;
+		return positionPossibles;
 	}
 
 
-
-
-
+	public String toString(){
+		
+		return "je suis une tour "+ super.toString();
+	}
 
 }

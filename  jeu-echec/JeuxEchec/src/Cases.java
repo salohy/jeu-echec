@@ -3,6 +3,12 @@ public class Cases {
 
 	private static Case[][] tabCase;
 	
+	
+	
+	public Cases() {
+		addCases();
+	}
+
 	public void addCases() {
 		Couleur color = Couleur.NOIR;
 		

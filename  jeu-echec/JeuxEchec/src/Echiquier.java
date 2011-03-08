@@ -1,4 +1,3 @@
-import java.util.Iterator;
 import java.util.List;
 
 
@@ -16,7 +15,6 @@ public class Echiquier {
 	}
 
 
-
 	public Cases getCases() {
 		return cases;
 	}
@@ -27,50 +25,16 @@ public class Echiquier {
 	 * @param piece
 	 * @return 
 	 */
-	public List<Position> positionJouable(Joueur joueur, Piece piece){
-		List<Position> listPositionsJouables;
-		//case sur laquelle est la piece à jouer
-		Case casePiece = piece.getCasePiece();
-		//liste des positions possibles pour cette pièce
-		listPositionsJouables = piece.typeDeplacement(casePiece);
-		//TODO: affiner la liste en fonction des cases occupées
+	public List<Case> positionJouable(Case casePieceAJouer){
+		List<Case> listPositionsJouables;
 		
-		listPositionsJouables=isDeplacementPossible(listPositionsJouables);
+		//piece du joueur
+		 Piece pieceDuJoueur = casePieceAJouer.getPiece();
+		
+		 //liste des positions possibles pour cette pièce
+		listPositionsJouables = pieceDuJoueur.typeDeplacement(casePieceAJouer);
+		
 		
 		return listPositionsJouables; //TODO vérifier ds le main que le joueur a choisie une position incluse ds la liste
 	}
-	
-
-
-
-	/**
-	 * methode qui retourne la case sur laquelle se trouve la piece en parametre
-	 * @param piece
-	 * @return
-	 */
-	/*public Case casePiece(Piece piece){
-		Case casePiece;
-		Position positionPiece = piece.getPosition();
-		casePiece = this.cases.getCase(positionPiece);
-				
-		return casePiece;
-	}*/
-
-	/**
-	 * methode qui deplace la piece du joueur à la position en paramètre
-	 * @param joueur
-	 * @param piece
-	 * @param position
-	 */
-	public void deplacementPiece(Joueur joueur, Piece piece, Position positionChoisie){
-		
-		Case caseChoisie=Cases.getCase(positionChoisie);
-		
-		if(caseChoisie.isPrise()){
-			//vérif
-		}
-		
-		
-	}
-
 }
