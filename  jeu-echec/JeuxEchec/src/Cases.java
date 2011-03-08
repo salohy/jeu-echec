@@ -52,6 +52,10 @@ public class Cases {
 		
 		return null;
 	}
+
+	public static Case[][] getTabCase() {
+		return tabCase;
+	}
 	
 	
 	

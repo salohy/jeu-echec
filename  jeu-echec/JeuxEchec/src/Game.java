@@ -19,7 +19,7 @@ public class Game {
 	}
 
 
-	public List<Position> isDeplacementPossible(Joueur joueur,List<Position> listPositionsJouables) {
+	/*public List<Position> isDeplacementPossible(Joueur joueur,List<Position> listPositionsJouables) {
 		
 		List<Position> positionPossible;
 		List <Piece> piecesDuJoueur=joueur.getPieces();
@@ -44,7 +44,7 @@ public class Game {
 
 					/*vérif si la case de la piece est dans la liste des positions possibles, 
 					si oui il ya une piece du joueur a cette pos*/
-					if(caseCourante == caseDeLaPiece){
+/*					if(caseCourante == caseDeLaPiece){
 						listPositionsJouables.remove(caseCourante);
 					}
 				}
@@ -56,7 +56,7 @@ public class Game {
 		positionPossible=listPositionsJouables;
 
 		return positionPossible;
-	}
+	}*/
 
 
 	
