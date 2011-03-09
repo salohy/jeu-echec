@@ -1,3 +1,4 @@
+package jeux;
 import java.util.List;
 
 
@@ -21,18 +22,8 @@ public class Joueur {
 	}
 
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-
 	public Couleur getCouleur() {
 		return couleur;
-	}
-
-
-	public void setCouleur(Couleur couleur) {
-		this.couleur = couleur;
 	}
 
 

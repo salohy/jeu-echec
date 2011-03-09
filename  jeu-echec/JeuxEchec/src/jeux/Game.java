@@ -1,3 +1,4 @@
+package jeux;
 import java.util.List;
 
 
@@ -13,7 +14,7 @@ public class Game {
 	}
 
 
-	public void addPiece(Joueur joueur,List<Piece> p){
+	public void piecesDuJoueur(Joueur joueur,List<Piece> p){
 		joueur.setPieces(p);
 	}
 
