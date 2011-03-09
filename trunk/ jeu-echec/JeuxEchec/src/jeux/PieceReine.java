@@ -1,10 +1,13 @@
+package jeux;
+
 import java.util.List;
 
 
-public class PieceRoi extends Piece {
+public class PieceReine extends Piece {
 
 	
-	public PieceRoi(Couleur couleur, boolean isCapturable, Joueur proprietaire) {
+
+	public PieceReine(Couleur couleur, boolean isCapturable, Joueur proprietaire) {
 		super(couleur, isCapturable, proprietaire);
 		// TODO Auto-generated constructor stub
 	}
@@ -20,6 +23,7 @@ public class PieceRoi extends Piece {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 
 }

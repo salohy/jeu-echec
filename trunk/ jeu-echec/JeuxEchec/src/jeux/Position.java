@@ -1,3 +1,4 @@
+package jeux;
 
 public class Position {
 	

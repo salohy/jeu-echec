@@ -1,3 +1,4 @@
+package jeux;
 import java.util.List;
 
 
@@ -8,7 +9,6 @@ public class Echiquier {
 	
 	
 	
-
 	public Echiquier(Cases cases) {
 		super();
 		this.cases = cases;
