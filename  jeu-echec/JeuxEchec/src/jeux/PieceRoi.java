@@ -22,6 +22,15 @@ public class PieceRoi extends Piece {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public String toString(){
+
+		if(this.getCouleur()==Couleur.BLANC){
+			return "r";
+		}else{
+			return "R";
+		}
+	}
 
 
 }

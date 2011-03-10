@@ -8,10 +8,10 @@ public class Cases {
 	
 	
 	public Cases() {
-		addCases();
+		//addCases();
 	}
 
-	public void addCases() {
+	/*public void addCases() {
 		Couleur color = Couleur.NOIR;
 		
 		for (int i=0;i<CONSTANTES.MAX_LIGNE;i++){
@@ -31,12 +31,19 @@ public class Cases {
 	
 	}
 	
+	
+	public void addPieceSurCase(Piece piece,Case caseAllouee) {
+		caseAllouee.setPiece(piece);	
+	}*/
+	
+	
+	
 	/**
 	 * methode qui retourne la case correspondante à la position passée en paramètre
 	 * @param positionPiece
 	 * @return Case
 	 */
-	public static Case getCase(Position positionPiece) {
+/*	public static Case getCase(Position positionPiece) {
 		
 		int xPositionPiece = positionPiece.getX();
 		int yPositionPiece = positionPiece.getY();
@@ -64,7 +71,7 @@ public class Cases {
 	public static Case[][] getTabCase() {
 		return tabCase;
 	}
-	
+	*/
 	
 	
 	

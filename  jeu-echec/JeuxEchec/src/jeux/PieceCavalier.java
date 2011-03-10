@@ -23,6 +23,14 @@ public class PieceCavalier extends Piece{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public String toString(){
+		if(this.getCouleur()==Couleur.BLANC){
+			return "c";
+		}else{
+			return "C";
+		}
+	}
 
 	
 

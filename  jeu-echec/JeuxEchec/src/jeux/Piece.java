@@ -9,13 +9,19 @@ public abstract class Piece {
 	//private Case casePiece;
 	private boolean isCapturable;
 	private Joueur proprietaire;
+	//private String positionInit;
 
 
-	public Piece(Couleur couleur, boolean isCapturable, Joueur proprietaire) {
+	public Piece() {
+		
+	}
+
+	public Piece(Couleur couleur, boolean isCapturable, Joueur proprietaire/*, String positionInit*/) {
 		super();
 		this.couleur = couleur;
 		this.isCapturable = isCapturable;
 		this.proprietaire = proprietaire;
+		//this.positionInit=positionInit;
 	}
 
 	public Couleur getCouleur() {
@@ -46,13 +52,16 @@ public abstract class Piece {
 	public abstract List<Case> typeDeplacement(Case casePieceADeplacer);
 
 	public abstract void capturable();
+	
+	
 
-
+	/*public String getPositionInit() {
+		return positionInit;
+	}*/
 
 	public String toString(){
 
-
-		return  " ma couleur "+couleur+" propriétaire: "+this.getProprietaire();
+		return  "piece";
 	}
 
 

@@ -47,7 +47,7 @@ public class Joueur {
 	 * @param pieceABouger
 	 * @param caseChoisie
 	 */
-	public void deplacementPiece(Piece pieceABouger, Case caseChoisie){
+	/*public void deplacementPiece(Piece pieceABouger, Case caseChoisie){
 
 		if(caseChoisie.isPrise()){
 			if(caseChoisie.getPiece().isCapturable())
@@ -57,7 +57,7 @@ public class Joueur {
 		caseChoisie.setPiece(pieceABouger);
 		System.out.println("case choisie: "+caseChoisie.toString()+" Piece a bouger : "+caseChoisie.getPiece().toString());
 
-	}
+	}*/
 
 
 

@@ -24,6 +24,13 @@ public class PieceReine extends Piece {
 		
 	}
 
+	public String toString(){
 
+		if(this.getCouleur()==Couleur.BLANC){
+			return "d";
+		}else{
+			return "D";
+		}
+	}
 
 }

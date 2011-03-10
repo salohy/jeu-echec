@@ -12,9 +12,7 @@ public class Test {
 	public static void main(String[] args) {
 
 
-		Cases casesDeLechiquier=new Cases();
-		
-		Echiquier echiquier=new Echiquier(casesDeLechiquier);
+		Echiquier echiquier=new Echiquier();
 		
 		
 		Joueur j1=new Joueur("Ben", Couleur.BLANC);
@@ -24,7 +22,7 @@ public class Test {
 		listeJoueur.add(j1);
 		listeJoueur.add(j2);
 		
-		Game partie=new Game(listeJoueur);
+		Game partie=new Game(echiquier,listeJoueur);
 		
 		List <Piece> listePieceJ1=new ArrayList<Piece>();
 		Piece tourJ1= new PieceTour(Couleur.BLANC, false, j1);
@@ -41,7 +39,8 @@ public class Test {
 		listePieceJ2.add(tour1J2);
 		
 		j2.setPieces(listePieceJ2);
-
+		
+		
 	}
 
 }
