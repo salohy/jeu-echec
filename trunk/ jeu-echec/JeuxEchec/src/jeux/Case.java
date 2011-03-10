@@ -6,7 +6,7 @@ public class Case {
 	
 	private Position position;
 	private Couleur couleur;
-	private boolean isPrise;
+	/*private boolean isPrise;*/
 	private Piece piece;
 	
 	
@@ -27,13 +27,13 @@ public class Case {
 		return couleur;
 	}
 
-	public boolean isPrise() {
+	/*public boolean isPrise() {
 		return isPrise;
 	}
 
 	public void setPrise(boolean isPrise) {
 		this.isPrise = isPrise;
-	}
+	}*/
 
 	public Piece getPiece() {
 		return piece;
@@ -43,18 +43,21 @@ public class Case {
 		this.piece = estSurLaCase;
 	}
 	
-	public Case(Position p,  Couleur color, boolean isPrise) {
+	public Case(Position p,  Couleur color/*, boolean isPrise*/) {
 		super();
 		this.position = p;
 		this.couleur=color;
-		this.isPrise = isPrise;
+		/*this.isPrise = isPrise;*/
 	}
 
 	
 	public String toString(){
 		
-		return "je suis la case de couleur "+couleur+" position x: "+
-		this.getPosition().getX()+" position y: "+this.getPosition().getY();
+		if(this.getCouleur()== Couleur.BLANC)
+			return " ";
+		else
+			return ".";
+		
 	}
 
 	
